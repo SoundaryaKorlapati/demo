@@ -1,25 +1,19 @@
-const http = require('http');
-
 const Joi = require('joi');
 const express = require('express');
 const app = express();
+
 app.use(express.json());
+const port = process.env.PORT || 3000;
 
+app.listen(port, ()=>{
+    console.log('Listening on port...');
+})
 
-// const server = http.createServer((request, response) => {
-//     response.writeHead(200, {"Content-Type": "text/plain"});
-//     response.end("Hello World! - testing");
-// });
+app.get('/', (req, res) => {
+    res.send('hello world');
+})
 
-const port = process.env.PORT || 1337;
-server.listen(port);
-
-//------------------------------------
-
-
-const server = http.createServer((request, response) => {
-    
-    app.post('/sendData', (req, res) => {
+app.post('/sendData', (req, res) => {
 
     const schema = {
         storeId: Joi.string().required(),
@@ -64,26 +58,9 @@ const server = http.createServer((request, response) => {
 
 })
 
-    
-});
-
-
-
-
-// const port = process.env.PORT || 3000;
-
-// app.listen(port, ()=>{
-//     console.log('Listening on port...')
-// })
-//------------------------------------------
-// app.post('/hello', (req, res) => {
-//     res.send('hello world');
-// })
-
-
 function validSecret(api_secret){
 
-    if(api_secret != '123654896523sdf5sd6g561sg'){
+    if(api_secret != 'b285d8e1d704afd077769dea5295685a'){
 
         return false
 
