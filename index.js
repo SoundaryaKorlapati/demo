@@ -72,7 +72,7 @@ console.log("Server running at http://localhost:%d", port);
 
 // function validSecret(api_secret){
 
-//     if(api_secret != 'b285d8e1d704afd077769dea5295685a'){
+//     if(api_secret != ''){
 
 //         return false
 
