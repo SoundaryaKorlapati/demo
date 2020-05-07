@@ -10,12 +10,12 @@
 
 // console.log("Server running at http://localhost:%d", port);
 
-// const Joi = require('joi');
-// const express = require('express');
-// const app = express();
+const Joi = require('joi');
+const express = require('express');
+const app = express();
 
-// app.use(express.json());
-// const port = process.env.PORT || 3000;
+app.use(express.json());
+const port = process.env.PORT || 3000;
 
 app.listen(port, ()=>{
     console.log('Listening on port...')
